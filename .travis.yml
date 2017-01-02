@@ -4,6 +4,8 @@ node_js:
 script:
   - echo "Desplegando !!"
 install:
+  - npm i -g polymer-cli
   - npm install -g firebase-tools
 after_success:
+  - polymer build
   - firebase deploy --token $FIREBASE_TOKEN
